@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriBazaar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #1e88e5;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            position: relative;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            display: block;
+            font-size: 1em;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #1565c0;
+        }
+
+        /* Dropdown Menu */
+        .menu-dropdown {
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            display: none;
+            flex-direction: column;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .menu-dropdown a {
+            color: #333;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .menu-dropdown a:hover {
+            background-color: #f2f2f2;
+        }
+
+        /* Show dropdown on click */
+        .navbar ul li:hover .menu-dropdown {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">AgriBazaar</a>
+        <ul>
+            <li>
+                <a href="#">Menu ▼</a>
+                <!-- Dropdown menu -->
+                <div class="menu-dropdown">
+                    <a href="index.html">Home</a>
+                    <a href="seeds.html">Seeds</a>
+                    <a href="equipment.html">Equipment</a>
+                    <a href="fertilizers.html">Fertilizers</a>
+                    <a href="pesticides.html">Pesticides</a>
+                    <a href="organic.html">Organic Products</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="farming-tips.html">Farming Tips</a>
+                    <a href="weather.html">Weather Updates</a>
+                    <a href="consultation.html">Expert Consultations</a>
+                    <a href="login.html">Login & Signup</a>
+                    <a href="cart.html">Cart</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div style="padding: 20px;">
+        <h1>Welcome to AgriBazaar</h1>
+        <p>Your one-stop solution for farming needs. Click on the "Menu" option above to explore more.</p>
+    </div>
+</body>
+</html>

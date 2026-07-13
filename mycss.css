@@ -1,0 +1,46 @@
+.background{
+   
+    background-size: cover;
+    background-position: center;
+    height: 725px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form{
+
+    background-color: rgba(252, 248, 248, 0.7);
+    padding: 25px;
+    border-radius: 20px;
+    max-width: 300px;
+    width: 70%;
+    margin: 0 auto;
+}
+ .login-form h2{
+    text-align: center;
+ }
+
+ .login-form form{
+    display: flex;
+    flex-direction: column;
+ }
+ 
+  .login-form button{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #c21eaf71;
+    color: white;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+
+ }
+
+ .login-form button:hover{
+    background-color: rgb(109, 9, 64);
+ }
+
+ .login-form form .extra{
+    color: black;
+ }

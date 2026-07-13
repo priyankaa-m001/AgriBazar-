@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming Equipment - AgriBazaar</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Existing styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background-color: #287233;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            color: #287233;
+            padding: 8px 16px;
+            border: 1px solid #287233;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: #287233;
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .equipment-card {
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            width: 300px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .equipment-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .equipment-card h3 {
+            margin: 10px 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .equipment-card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #287233;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .buttons button {
+            background: #287233;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            flex: 1;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .buttons button:hover {
+            background: #1f5826;
+        }
+
+        .wishlist-btn {
+            background-color: #f39c12;
+        }
+
+        .wishlist-btn:hover {
+            background-color: #e67e22;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: #1a4628;
+            color: #fff;
+            padding: 20px 40px;
+            margin-top: 40px;
+        }
+
+        .features {
+            background: #2d7c10;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        .payments, .branding, .links {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px;
+        }
+
+        .links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .links li {
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .links li:hover {
+            text-decoration: underline;
+        }
+
+        .branding h2 {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .branding span {
+            color: #7cc144;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .social-icons span {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .social-icons span:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="try.html" class="back-button">← Back to Home</a>
+        Fertilizers
+    </div>
+
+    <div class="container">
+        <!-- Tractor -->
+        <div class="equipment-card">
+            <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTenjB8RhzC2wWLyj_M0-hoR0Cd4nqHYB8ZyED6eUjduc6TYRR-ACu_hwP90BZTKqqKmgU2xXFFdbu39tIqRAzUZpzU-PsjzQe7LjcyVglwZcBZ9I3NQNno&usqp=CAE" alt="Tractor">
+            <h3>Go Garden </h3>
+            <p>All Purpose Bio DAP Fertilizer for Home Plants & Gardening Purpose - 100% Water Soluble Fertilizer 400 Gram Granules</p>
+            <div class="price">₹5,00,000</div>
+            <div class="buttons">
+                <button class="wishlist-btn">Add to Wishlist</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+        <!-- Plough -->
+        <div class="equipment-card">
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQrO5uYbnxmDKnKSvFsuZOlnDp764yyZv1i42YOnhILLqjvqYZy0ZOCWlD2EDK4OmzVqrUrjBVsHHMtY_VXz-l4DFK8u--dWI22b1ZRWok&usqp=CAE" alt="Plough">
+            <h3>Cow Manure</h3>
+            <p>The perfect organic fertilizer, Ugaoo Cow Manure is rich in organic matter that helps to improve aeration and the breaking up of compact soils. It is developed from composted ...</p>
+            <div class="price">₹500</div>
+            <div class="buttons">
+                <button class="wishlist-btn">Add to Wishlist</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+        <!-- Harvester -->
+        <div class="equipment-card">
+            <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSdp8TwfoBVEwE5lDu8c8Nj8UDIaL2gajZw8iI8ysHSKOhu7UHDwUEEU1hS3G1f6ZFk0ROzD1IgL6EJ9GfxW090l0imq5fPBrYyuMx9ANQ4A5eV6Rl2PyKV&usqp=CAE" alt="Harvester">
+            <h3>Bloom Buddy </h3>
+            <p>Bloom Buddy Vermicompost 4.5Kg (Organic Manure) Fertilizer, Manure, Soil, Potting Mixture  (4.5 kg, Powder)</p>
+            <div class="price">₹1000</div>
+            <div class="buttons">
+                <button class="wishlist-btn">Add to Wishlist</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+        <!-- Sprayer -->
+        <div class="equipment-card">
+            <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTyyvfzm9g7m7a6ZR_XVxvnxJjLUer1nB6LoWUXl9HiSNjM1P_TEeklfwYjM6znISB7E8I6KMeUpIwnFAz0O5pqNqw5Hbfj7CjD7fAYvHiHA-xH-ScxKjGL&usqp=CAE" alt="Sprayer">
+            <h3>Coconut Plant Fertilizer</h3>
+            <p>Product Description: Coconut palms are heavy feeders which need a continuous supply of complete fertilizers.</p>
+            <div class="price">₹3300</div>
+            <div class="buttons">
+                <button class="wishlist-btn">Add to Wishlist</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+        <!-- Seeder -->
+        <div class="equipment-card">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ-pBoLpj0ETfpjKCBKuSnWTvCPhlpHHfuLZ50eSN45ESDk3b3TdOrpukILS4QOO4cG39j4k4H2IW1UWXR8KA1V3Gy46uBJ3cLNLWglUMrt8y7mD-KlzXGUaw&usqp=CAE" alt="Seeder">
+            <h3>HUBEL</h3>
+            <p>Growth and Development Combo (Farmtone NPK 19:19:19 3 Kg + HUBEL Humic Acid 98% 1.2 Kg)</p>
+            <div class="price">₹7500</div>
+            <div class="buttons">
+                <button class="wishlist-btn">Add to Wishlist</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+                <!-- Tractor -->
+                <div class="equipment-card">
+                    <img src="https://dailusretail.com/cdn/shop/files/1_fdf0fbce-7436-4b6e-b8cd-c0c3ceaa4945.jpg?v=1741676179&width=713" alt="Tractor">
+                    <h3>Osmocote Plus Outdoor & Indoor Smart-Release Plant Food</h3>
+                    <p>Osmocote Outdoor & Indoor Smart-Release Plant Food is the most popular Osmocote formula with more than 1 million units sold annually.</p>
+                    <div class="price">₹500</div>
+                    <div class="buttons">
+                        <button class="wishlist-btn">Add to Wishlist</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+
+                    <!-- Tractor -->
+        <div class="equipment-card">
+            <img src="" alt="Tractor">
+            <h3>Tractor</h3>
+            <p>High-performance tractors for all farming needs.</p>
+            <div class="price">₹5,00,000</div>
+            <div class="buttons">
+                <button class="wishlist-btn">Add to Wishlist</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+                <!-- Tractor -->
+                <div class="equipment-card">
+                    <img src="https://banner2.cleanpng.com/20180630/hgc/aaxjjaj0g.webp" alt="Tractor">
+                    <h3>Tractor</h3>
+                    <p>High-performance tractors for all farming needs.</p>
+                    <div class="price">₹5,00,000</div>
+                    <div class="buttons">
+                        <button class="wishlist-btn">Add to Wishlist</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+
+
+                    <!-- Tractor -->
+        <div class="equipment-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT52_lJiUIF2203dX0o0tgXUeHpytLbr3RlyXSsI5SF1EAW2g-xBeITQoTzYHtyWMBWLp0&usqp=CAU" alt="Tractor">
+            <h3>Tractor</h3>
+            <p>High-performance tractors for all farming needs.</p>
+            <div class="price">₹5,00,000</div>
+            <div class="buttons">
+                <button class="wishlist-btn">Add to Wishlist</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </div>
+        <!-- Add more cards as needed -->
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="features">
+            <div>FAST SHIPPING</div>
+            <div>BEST QUALITY PRODUCT</div>
+            <div>POST DELIVERY SUPPORT</div>
+            <div>HUGE SAVINGS</div>
+        </div>
+
+        <div class="footer-content">
+            <div class="payments">
+                <h3>We accept all major payments methods</h3>
+                <p>Payments to the website can be made by net banking, credit/debit cards, UPI and wallets</p>
+                <img src="payment-methods.png" alt="Payment Methods" width="200">
+            </div>
+
+            <div class="branding">
+                <h2>AGRI<span>BAZAAR</span></h2>
+                <p>Your trusted platform for farming equipment and products</p>
+            </div>
+
+            <div class="links">
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Visit Store</li>
+                        <li>Contact Us</li>
+                        <li>Login / Register</li>
+                        <li>Sell With Us</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Site Links</h4>
+                    <ul>
+                        <li>Privacy Policy</li>
+                        <li>Shipping Details</li>
+                        <li>Offers & Coupons</li>
+                        <li>FAQ</li>
+                        <li>Terms & Conditions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2025 | AgriBazaar</p>
+            <div class="social-icons">
+                <span>YouTube</span>
+                <span>Facebook</span>
+                <span>Twitter</span>
+                <span>Instagram</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

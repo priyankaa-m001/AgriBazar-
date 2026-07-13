@@ -1,0 +1,364 @@
+/*try.html*/
+/********** Common CSS Starts **********/  
+html, body {
+	font-family :Roboto, sans-serif, arial;
+	font-size: 14px;
+	color: #242424;
+	font-weight: 400;
+}
+html {
+	-webkit-text-size-adjust:100%;
+	-ms-text-size-adjust:100%;
+	font-size:10px;
+	-webkit-tap-highlight-color:transparent 
+}
+* {
+	margin:0px;
+	padding:0px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+	outline:0 
+}
+.container {
+	width:1150px;
+	margin:0px auto;
+	display:table;
+}
+.width-100 {
+	width:100%;
+	float:left;
+}
+.width-50 {
+	width:50%;
+	float:left;
+}
+.width-25 {
+	width:25%;
+	float:left;
+}
+.width-75 {
+	width:75%;
+	float:left;
+}
+.width-80 {
+	width:80%;
+	float:left;
+}
+.width-60 {
+	width:60%;
+	float:left;
+}
+.width-40 {
+	width:40%;
+	float:left;
+}
+.width-33 {
+	width:33%;
+	float:left;
+}
+.width-30 {
+	width:30%;
+	float:left;
+}
+.width-20 {
+	width:20%;
+	float:left;
+}
+.main-section {
+	width:100%;
+	float:left;
+	padding-top:80px;
+	padding-bottom:80px;
+}
+.bg-grey {
+	background:#f0f3fa;
+}
+.heading-section {
+	font-size: 25px;
+	text-align: center;
+}
+.heading-section span {
+	color: #787eff;
+}
+.subhead-section {
+	font-size: 16px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+/********** Common CSS Ends **********/
+
+/**********  Logo and Search Panel CSS Code Starts  **********/
+.search-panel {
+	background: #367425;
+	padding: 20px 0;
+  }
+  .width-50 {
+	padding-top: 15px;
+  }
+
+  .search-textbox {
+	padding-left: 20px ;
+	height: 40px;
+	width: 80%;
+	border: 1px solid #fff;
+	float: left;
+	
+  }
+  .search-button {
+	height: 40px;
+	width: 50px;
+	border: none;
+	background: white;
+	float: left;
+	cursor:pointer;
+	
+  }
+  .search-button i {
+	color: #265630;
+  }
+  .cart-sect {
+	list-style: none;
+	float: right;
+	margin-top: 8px;
+  }
+  .cart-sect li {
+	float: left;
+	padding: 7px 9px;
+	padding-top: 15px;
+  }
+  .cart-sect li a {
+	font-size: 14px;
+	color: #ffffff;
+	font-family :"Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none;
+  }
+  .cart-sect li i {
+	font-size: 14px;
+	color: #ffffff;
+  }
+
+  .width-20 img{
+	width: 100px;
+	height: 75px;
+	border-radius: 100px;
+	
+  }
+  /**********  Logo and Search Panel CSS Code Ends  **********/
+
+  /**********  Main Menu CSS Code Starts  **********/
+.main-menu {
+	list-style: none;
+	
+  }
+  .main-menu a {
+	font-weight: 500;
+	color: #2b304a;
+	font-size: 17px;
+	font-family :Roboto, sans-serif, arial;
+	text-decoration:salmon;
+	border-radius: 1000px;
+    transition: 0.3s;
+    transition-property: color,background;
+  }
+  .main-menu li {
+	float: left;
+	padding: 27px 0;
+	padding-left: 110px;
+	padding-right: 10px;
+	
+  }
+  .main-menu ul{
+	border-radius: solid;
+  }
+  .main-menu {
+	border-bottom: #787eff;
+  }
+  .main-menu a:hover{
+         background-color: rgb(158, 223, 158);
+		 
+  }
+
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	top: 200%;
+	left: 0;
+	
+	background-color: #fff;
+	padding: 20px;
+	display: none;
+	flex-wrap: nowrap;
+	gap: 30px;
+	border: 1px solid #ddd;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	z-index: 999;
+  }
+  
+  .dropdown-content.active {
+	display: flex;
+	padding-left: 80px;
+	left: 580px;
+	top: 55px;
+  }
+  
+  .column {
+	min-width: 150px;
+  }
+  
+  .column h4 {
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: green;
+  }
+  
+  .column a {
+	display: block;
+	padding: 5px 0;
+	color: #333;
+	font-size: 14px;
+  }
+  
+  .column a:hover {
+    color: green;
+  }
+  
+  /**********  Main Menu CSS Code Ends  **********/
+
+  /* Hero Section */
+  .hero-section {
+	background-image: url("home\ page.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 400px;
+	color:white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border-radius: 10px;
+	border: 1px solid #ddd;
+
+}
+.hero-section h1 {
+	font-size: 48px;
+	margin: 0;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.hero-section p {
+	font-size: 18px;
+	margin: 10px 0;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/*hro section end here/
+
+ /* Deals Section */
+ .deals-section {
+	
+	padding-top: 15px;
+	padding-left: 100px;
+	background-color: #f9f9f9;
+}
+.deals-section h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+.deals-container {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+.deal-item {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 10px;
+	text-align: center;
+	width: 22%;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.deal-item img {
+	width: 100%;
+	border-radius: 8px;
+}
+.deal-item h3 {
+	font-size: 16px;
+	margin: 10px 0;
+}
+.deal-item p {
+	color: #287233;
+	font-weight: bold;
+}
+
+/*deals section end/
+
+/**********  Product-Section CSS Code Starts  **********/
+.product-section {
+	padding-left:10px;
+	padding-right:15px;
+	margin-bottom:20px;
+	padding-top: 30px;
+}
+.product-img {
+	width:auto;
+	height:270px;
+}
+.product-img-center {
+	text-align:center;
+}
+.product-border {
+	border: 1px solid #d1d1d1;
+	padding:10px;
+
+}
+.product-name a {
+	color: #232b33;
+	text-decoration: none;
+	font-size: 17px;
+	font-family :Roboto, sans-serif, arial;
+}
+.product-rating {
+	color: #FFC315;
+	font-size: 14px;
+	padding-top: 6px;
+}
+.product-rating span {
+	font-weight: 600;
+	color: #3c3b3b8c;
+	font-size: 12px;
+	font-family :Roboto, sans-serif, arial;
+}
+.product-discounted-price {
+	color: #333;
+	font-size: 18px;
+	letter-spacing: 0.1px;
+	font-weight: 600;
+	font-family :Roboto, sans-serif, arial;
+}
+.product-original-price {
+	color: #6f6f6f;
+	text-decoration: line-through;
+	font-size:14px;
+	font-family :"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.product-discount {
+	border: 1px solid #ccc;
+	background: #fff;
+	display: inline-block;
+	font-size: 10px;
+	color: #999;
+	padding: 5px;
+	border-radius: 1px;
+	float:none;
+}
+.product-price {
+	margin-top:15px;
+}
+
+/**********   Product-Section CSS Code Ends  **********/
+
+/***footer**/
+

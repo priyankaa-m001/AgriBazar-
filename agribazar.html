@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--font awesome link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>AgriBazaar - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(239, 234, 234);
+            padding: 45px 40px;
+            color: white;
+
+        }
+        .navbar img{
+            
+            height: 4%;
+            width: 4%;
+            border-radius:50%; 
+        }
+        .navbar a{
+            color: black;
+            padding-right:10px ;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+            
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            padding-left: 0;
+            padding-right: 60%;
+            color: #287233;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background-image: url("home\ page.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            
+            border: 1px solid #ddd;
+        }
+        .hero-section h1 {
+            font-size: 48px;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .hero-section p {
+            font-size: 18px;
+            margin: 10px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        /* Deals Section */
+        .deals-section {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .deals-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .deals-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .deal-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            width: 22%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .deal-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .deal-item h3 {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .deal-item p {
+            color: #287233;
+            font-weight: bold;
+        }
+        .category-section {
+            padding: 20px;
+        }
+        .category-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .category-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        .category-item {
+            text-align: center;
+            width: 20%;
+        }
+        .category-item img {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #287233;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <img src="logo.png">
+        <div class="logo">AgriBazaar</div>
+        <div class="nav-links">
+        
+            <a href="#equipment">Equipment</a>
+            <a href="#seeds">Seeds</a>
+            <a href="#fertilizer">Fertilizer</a>
+            <a href="#about">About Us</a>
+            <a href="#menu">Menu</a>
+            <a href="#you"><i class="fa-solid fa-user"></i></a>
+            <a href="#cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="wislist.html"><i class="fa-solid fa-heart"></i></a>
+
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div>
+            <h1>Welcome to AgriBazaar</h1>
+            <p>Your one-stop solution for farming needs.</p>
+            
+        </div>
+    </div>
+
+    <!-- Deals Section -->
+    <div class="deals-section">
+        <h2>Deals for You</h2>
+        <div class="deals-container">
+            <div class="deal-item">
+                <img src="">
+                <h3>High-Quality Seeds</h3>
+                <p>Up to 30% Off</p>
+            </div>
+            <div class="deal-item">
+                <img src="C:\Users\Acer\OneDrive\Pictures\Screenshots\Screenshot 2024-12-20 175416.png" alt="Fertilizer Deal">
+                <h3>Organic Fertilizers</h3>
+                <p>Flat 20% Off</p>
+            </div>
+            <div class="deal-item">
+                <img src="C:\Users\Acer\OneDrive\Pictures\Screenshots\Screenshot 2024-12-20 175559.png" alt="Equipment Deal">
+                <h3>Farming Equipment</h3>
+                <p>Save 25%</p>
+            </div>
+            <div class="deal-item">
+                <img src="C:\Users\Acer\OneDrive\Pictures\Screenshots\Screenshot 2024-12-20 175705.png" alt="Other Deal">
+                <h3>Pesticides</h3>
+                <p>Buy 1 Get 1 Free</p>
+               <link> <a href="wislist.html"></a><i class="fa-solid fa-heart"></i></a></link>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <div class="category-section">
+        <h2>Explore Categories</h2>
+        <h3>Fertilizer</h3>
+        <div class="category-container">
+            <div class="category-item">
+                <img src="frtilizer1.jpg" alt="Fertilizer">
+                <h3>Organic</h3>
+            </div>
+            <div class="category-item">
+                <img src="fertilizer2.jpg" alt="Fertilizers">
+                <h3>chemical</h3>
+            </div>
+            <div class="category-item">
+                <img src="frtilizer3.jpg" alt="Bio-fertilizerss">
+                <h3>Bio-fertilizerss</h3>
+            </div>
+            <div class="category-item">
+                <img src="fertilizer4.jpg" alt="liquid">
+                <h3>liquid</h3>
+            </div>
+                <div class="category-item">
+                    <img src="fertilizer5.jpg" alt="pesticides">
+                    <h3>pesticides</h3>
+                </div>
+        </div>
+        <h3>SEEDS</h3>
+        <div class="category-container">
+            <div class="category-item">
+                <img src="seeed1.jpg" alt="Seeds">
+                <h3>Crops</h3>
+            </div>
+            <div class="category-item">
+                <img src="seed2.jpg" alt="Fertilizers">
+                <h3>flowers</h3>
+            </div>
+            <div class="category-item">
+                <img src="seed3.jpg" alt="Equipment">
+                <h3>fruits</h3>
+            </div>
+            <div class="category-item">
+                <img src="seed4.jpg" alt="Equipment">
+                <h3>vegitable</h3>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <h3>Equipments</h3>
+    <div class="category-container">
+        <div class="category-item">
+            <img src="equipment1.jpg" alt="Fertilizer">
+            <h3>hand tools</h3>
+        </div>
+        <div class="category-item">
+            <img src="equipment2.jpg" alt="Fertilizers">
+            <h3>Machinary</h3>
+        </div>
+        <div class="category-item">
+            <img src="eqipment3.jpg" alt="Bio-fertilizerss">
+            <h3>irigaton tools</h3>
+        </div>
+        <div class="category-item">
+            <img src="equipment4.jpg" alt="liquid">
+            <h3>harvesting</h3>
+        </div>
+    </div> 
+</div>
+</div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 AgriBazaar. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming Equipment - AgriBazaar</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Existing styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background-color: #287233;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            color: #287233;
+            padding: 8px 16px;
+            border: 1px solid #287233;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: #287233;
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .equipment-card {
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            width: 300px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .equipment-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .equipment-card h3 {
+            margin: 10px 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .equipment-card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #287233;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .buttons button {
+            background: #287233;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            flex: 1;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .buttons button:hover {
+            background: #1f5826;
+        }
+
+        .wishlist-btn {
+            background-color: #f39c12;
+        }
+
+        .wishlist-btn:hover {
+            background-color: #e67e22;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: #1a4628;
+            color: #fff;
+            padding: 20px 40px;
+            margin-top: 40px;
+        }
+
+        .features {
+            background: #2d7c10;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        .payments, .branding, .links {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px;
+        }
+
+        .links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .links li {
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .links li:hover {
+            text-decoration: underline;
+        }
+
+        .branding h2 {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .branding span {
+            color: #7cc144;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .social-icons span {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .social-icons span:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="try.html" class="back-button">← Back to Home</a>
+        Farming Equipment
+    </div>
+
+    <div class="container">
+        <!-- Tractor -->
+        <div class="equipment-card">
+            <img src="https://www.deere.co.in/assets/images/region-1/products/implements/ridger/ridger_img_large_ad26135ac451323d6132e38c1ceebd660be53bac.jpg" alt="Tractor">
+            <h3>Tractor</h3>
+            <p>High-performance tractors for all farming needs.</p>
+            <div class="price">₹5,00,000</div>
+            <div class="buttons">
+                <button class="wishlist-btn">Add to Wishlist</button>
+              <a href="register.php"><button>Buy Now</button></a>
+            </div>
+        </div>
+
+        <!-- Plough -->
+        <div class="equipment-card">
+            <img src="https://www.deere.co.in/assets/images/region-1/products/implements/Green_System_Chisel_Plough_large_7a75139f1171a783058877786a0a619087d17ad1.png" alt="Plough">
+            <h3>Plough</h3>
+            <p>Durable ploughs for effective soil cultivation.</p>
+            <div class="price">₹50,000</div>
+            <div class="buttons">
+                <button class="wishlist-btn">Add to Wishlist</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+        <!-- Harvester -->
+        <div class="equipment-card">
+            <img src="https://3.imimg.com/data3/PI/QO/GLADMIN-21651/agricultural-equipment-250x250.jpg" alt="Harvester">
+            <h3>Harvester</h3>
+            <p>Efficient harvesting machines for large fields.</p>
+            <div class="price">₹10,00,000</div>
+            <div class="buttons">
+                <button class="wishlist-btn">Add to Wishlist</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+        <!-- Sprayer -->
+        <div class="equipment-card">
+            <img src="https://www.tafe.com/img/eicher-tractor.webp" alt="Sprayer">
+            <h3>Sprayer</h3>
+            <p>Automated sprayers for pesticides and fertilizers.</p>
+            <div class="price">₹30,000</div>
+            <div class="buttons">
+                <button class="wishlist-btn">Add to Wishlist</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+        <!-- Seeder -->
+        <div class="equipment-card">
+            <img src="https://www.tradeindia.com/wp-content/uploads/2024/05/Best-Farming-Equipment-for-Modern-Agriculture-jpg.webp" alt="Seeder">
+            <h3>Seeder</h3>
+            <p>Precision seeders for better crop yield.</p>
+            <div class="price">₹75,000</div>
+            <div class="buttons">
+                <button class="wishlist-btn">Add to Wishlist</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+                <!-- Tractor -->
+                <div class="equipment-card">
+                    <img src="https://www.renderhub.com/surf3d/electric-walking-hand-tractor-agriculture-farm/electric-walking-hand-tractor-agriculture-farm-04.jpg" alt="Tractor">
+                    <h3>Tractor</h3>
+                    <p>High-performance tractors for all farming needs.</p>
+                    <div class="price">₹5,00,000</div>
+                    <div class="buttons">
+                        <button class="wishlist-btn">Add to Wishlist</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+
+                    <!-- Tractor -->
+        <div class="equipment-card">
+            <img src="https://www.nsspl.in/wp-content/uploads/2022/08/Farming-Equipments-img-6.jpg" alt="Tractor">
+            <h3>Tractor</h3>
+            <p>High-performance tractors for all farming needs.</p>
+            <div class="price">₹5,00,000</div>
+            <div class="buttons">
+                <button class="wishlist-btn">Add to Wishlist</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+                <!-- Tractor -->
+                <div class="equipment-card">
+                    <img src="https://banner2.cleanpng.com/20180630/hgc/aaxjjaj0g.webp" alt="Tractor">
+                    <h3>Tractor</h3>
+                    <p>High-performance tractors for all farming needs.</p>
+                    <div class="price">₹5,00,000</div>
+                    <div class="buttons">
+                        <button class="wishlist-btn">Add to Wishlist</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+
+
+                    <!-- Tractor -->
+        <div class="equipment-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT52_lJiUIF2203dX0o0tgXUeHpytLbr3RlyXSsI5SF1EAW2g-xBeITQoTzYHtyWMBWLp0&usqp=CAU" alt="Tractor">
+            <h3>Tractor</h3>
+            <p>High-performance tractors for all farming needs.</p>
+            <div class="price">₹5,00,000</div>
+            <div class="buttons">
+                <button class="wishlist-btn">Add to Wishlist</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </div>
+        <!-- Add more cards as needed -->
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="features">
+            <div>FAST SHIPPING</div>
+            <div>BEST QUALITY PRODUCT</div>
+            <div>POST DELIVERY SUPPORT</div>
+            <div>HUGE SAVINGS</div>
+        </div>
+
+        <div class="footer-content">
+            <div class="payments">
+                <h3>We accept all major payments methods</h3>
+                <p>Payments to the website can be made by net banking, credit/debit cards, UPI and wallets</p>
+                <img src="payment-methods.png" alt="Payment Methods" width="200">
+            </div>
+
+            <div class="branding">
+                <h2>AGRI<span>BAZAAR</span></h2>
+                <p>Your trusted platform for farming equipment and products</p>
+            </div>
+
+            <div class="links">
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Visit Store</li>
+                        <li>Contact Us</li>
+                        <li>Login / Register</li>
+                        <li>Sell With Us</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Site Links</h4>
+                    <ul>
+                        <li>Privacy Policy</li>
+                        <li>Shipping Details</li>
+                        <li>Offers & Coupons</li>
+                        <li>FAQ</li>
+                        <li>Terms & Conditions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2025 | AgriBazaar</p>
+            <div class="social-icons">
+                <span>YouTube</span>
+                <span>Facebook</span>
+                <span>Twitter</span>
+                <span>Instagram</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
