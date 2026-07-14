@@ -1,6 +1,6 @@
 # AgriBazaar 🌾
 
-AgriBazaar is a full-stack e-commerce web application built for farmers to buy agricultural equipment, seeds, fertilizers, and pesticides online. It was developed as a college project to demonstrate practical skills in PHP and MySQL-based web development.
+Agribazar is full-stack e-commerce web application built for farmers to buy agricultural equipment, seeds, fertilizers, and pesticides online. i developed this project in my second year of collage  to demonstrate practical skills in PHP and MySQL-based web development.
 
 ## Features
 
