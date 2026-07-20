@@ -45,11 +45,11 @@ AgriBazaar/
 2. Clone this repository into your `htdocs` folder:
    ```bash
    git clone https://github.com/priyankaa-m001/AgriBazar-.git
-   ```
+   
 3. Create a MySQL database and import the schema:
-   ```
+   
    db/db_shopping_cart.sql
-   ```
+   
 4. Update database credentials in `config.php` / `connection.php` to match your local setup
 5. Visit `http://localhost/AgriBazar-/` in your browser
 
