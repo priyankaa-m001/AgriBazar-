@@ -52,6 +52,7 @@ AgriBazaar/
    
 4. Update database credentials in `config.php` / `connection.php` to match your local setup
 5. Visit `http://localhost/AgriBazar-/` in your browser
+   
 
 ## Future Improvements
 
