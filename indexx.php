@@ -1,6 +1,9 @@
 <?php
 
 session_start();
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
 if (isset($_SESSION['errors'])) {
   $errors = $_SESSION['errors'];
 }
@@ -238,6 +241,7 @@ body {
      
     <form method="POST" action="user-account.php">
          
+      <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8'); ?>">
       <div class="input-group">
         <i class="fas fa-envelope"></i>
         <input type="email" name="email" id="email" placeholder="Email" required>

@@ -1,5 +1,5 @@
 <?php 
-	include "config.php";
+	require_once "config.php";
 	session_start();
 	
 	include "cart.class.php";
@@ -32,8 +32,8 @@
 						<?php $items=$cart->get_all_items(); ?>
 						<?php foreach($items as $item): ?>
 							<tr>
-								<td><img src='images/<?php echo $item["img"];?>' style='height:80px;' ></td>
-								<td><?php echo $item["name"];?></td>
+								<td><img src='images/<?php echo htmlspecialchars($item["img"], ENT_QUOTES, "UTF-8");?>' style='height:80px;' ></td>
+								<td><?php echo htmlspecialchars($item["name"], ENT_QUOTES, "UTF-8");?></td>
 								<td>&#8377; <?php echo $item["price"];?></td>
 								<td><input type='number' value='<?php echo $item["qty"];?>' class='qty' pid='<?php echo $item["id"]; ?>' min='1'></td>
 								<td>&#8377; <span class='row_total'><?php echo $item["total"];?></span></td>

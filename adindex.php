@@ -3,6 +3,7 @@
  if(!isset($_SESSION['AdminLoginId']))
     {
        header("location: try.html");
+       exit();
     }
 ?>
 

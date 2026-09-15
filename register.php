@@ -1,6 +1,9 @@
 <?php
 
 session_start();
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
 if (isset($_SESSION['errors'])) {
     $errors = $_SESSION['errors'];
  }
@@ -12,7 +15,7 @@ if (isset($_SESSION['errors'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register - AgriBazaar</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -32,6 +35,7 @@ if (isset($_SESSION['errors'])) {
         }
         ?>
         <form method="POST" action="user-account.php">
+            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8'); ?>">
             <div class="input-group">
                 <i class="fas fa-user"></i>
                 <input type="text" name="name" id="name" placeholder="Name" required>

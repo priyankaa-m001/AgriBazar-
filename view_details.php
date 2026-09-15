@@ -1,5 +1,5 @@
 <?php 
-	include "config.php";
+	require_once "config.php"; // provides $pdo
 	session_start();
 	
 	include "cart.class.php";
@@ -16,15 +16,17 @@
 		];
 		$cart->add_to_cart($item);
 		header("location:view_cart.php");
+		exit();
 	}
 	
 	$data=[];
 	$id = isset($_GET["id"]) ? (int)$_GET["id"] : 0;
 	if ($id > 0) {
-		$sql="select * from products where PID={$id}";
-		$res=$con->query($sql);
-		if($res && $res->num_rows>0){
-			$data=$res->fetch_assoc();
+		$stmt = $pdo->prepare("SELECT * FROM products WHERE PID = :id");
+		$stmt->execute(['id' => $id]);
+		$row = $stmt->fetch();
+		if ($row) {
+			$data = $row;
 		}
 	}
 ?>
@@ -42,18 +44,18 @@
 					<?php if(!empty($data)): ?>
 					<div class='row mt-5'>
 						<div class='col-md-4'>
-							  <img src="images/<?php echo $data["IMAGE"]; ?>" class='img-thumbnail'>
+							  <img src="images/<?php echo htmlspecialchars($data["IMAGE"], ENT_QUOTES, 'UTF-8'); ?>" class='img-thumbnail'>
 						</div>	
 						<div class='col-md-8'>
-							<h2 class='text-muted'><?php echo $data["PRODUCT"]; ?></h2>
-							<p class="font-weight-bold">Price &#8377; <?php echo $data["PRICE"]; ?></p>
-							<p><?php echo $data["DESCRIPTION"]; ?></p>
+							<h2 class='text-muted'><?php echo htmlspecialchars($data["PRODUCT"], ENT_QUOTES, 'UTF-8'); ?></h2>
+							<p class="font-weight-bold">Price &#8377; <?php echo htmlspecialchars($data["PRICE"], ENT_QUOTES, 'UTF-8'); ?></p>
+							<p><?php echo htmlspecialchars($data["DESCRIPTION"], ENT_QUOTES, 'UTF-8'); ?></p>
 							
-							<form method='post' action='<?php echo $_SERVER["REQUEST_URI"];?>'>
-								<input type='hidden' name='pid' value='<?php echo $data["PID"]; ?>'>
-								<input type='hidden' name='product' value='<?php echo $data["PRODUCT"]; ?>'>
-								<input type='hidden' name='price' value='<?php echo $data["PRICE"]; ?>'>
-								<input type='hidden' name='img' value='<?php echo $data["IMAGE"]; ?>'>
+							<form method='post' action='<?php echo htmlspecialchars($_SERVER["REQUEST_URI"], ENT_QUOTES, 'UTF-8');?>'>
+								<input type='hidden' name='pid' value='<?php echo htmlspecialchars($data["PID"], ENT_QUOTES, 'UTF-8'); ?>'>
+								<input type='hidden' name='product' value='<?php echo htmlspecialchars($data["PRODUCT"], ENT_QUOTES, 'UTF-8'); ?>'>
+								<input type='hidden' name='price' value='<?php echo htmlspecialchars($data["PRICE"], ENT_QUOTES, 'UTF-8'); ?>'>
+								<input type='hidden' name='img' value='<?php echo htmlspecialchars($data["IMAGE"], ENT_QUOTES, 'UTF-8'); ?>'>
 									<p><input type='number' min='1' value='1' name='qty' required class='form-control col-md-5'></p>
 								<input type='submit' name='submit' value='Add To Cart' class='btn btn-primary'>
 							</form>
@@ -66,4 +68,4 @@
 			</div>
 		</div>
     </body>
-</html> 
+</html>

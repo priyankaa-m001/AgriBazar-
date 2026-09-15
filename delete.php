@@ -1,18 +1,22 @@
 <?php
-include "connection.php";
+require_once "config/auth_db.php"; // provides $pdoAuth (accounts DB)
+session_start();
+
+// This page lists and deletes user accounts — it must be admin-only.
+// (It previously had no login check at all.)
+if (!isset($_SESSION['AdminLoginId'])) {
+    header("Location: admin.php");
+    exit();
+}
+
 if (isset($_GET['id'])) {
-
-    $id=mysqli_real_escape_string($con, $_GET['id']);
-
-    $delete=mysqli_query($con,"DELETE FROM `users` WHERE `ID`='$id'");
+    $stmt = $pdoAuth->prepare("DELETE FROM users WHERE ID = :id");
+    $stmt->execute(['id' => $_GET['id']]);
     header("Location: delete.php");
     exit();
 }
 
-$select="select * from users";
-
-$query=mysqli_query($con,$select);
-
+$users = $pdoAuth->query("SELECT * FROM users")->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -261,35 +265,18 @@ body{
             <th>operation</th>
         </tr>  
                    
-        <?php
-                     $num=mysqli_num_rows($query);
-                     if($num>0){
-                        while($result=mysqli_fetch_assoc($query)){
-
-                            echo "
-                               <tr>
-                                    <td>".$result['ID']."</td>
-                                    <td>".$result['email']."</td>
-                                    <td>".$result['password']."</td>
-                                    <td>".$result['name']."</td>
-                                    <td>".$result['created_at']."</td>
-                                    
-                                    
-                                    <td>
-
-                                    <a href='delete.php?id=".$result['ID']."'
-                                    class='btn'>Delete</a>
-                                   
-                                    </td>
-                                  
-                                   
-                                    
-                               </tr>
-                            
-                            ";
-                        }
-                     }
-               ?>
+        <?php foreach ($users as $result): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($result['ID'], ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?php echo htmlspecialchars($result['email'], ENT_QUOTES, 'UTF-8'); ?></td>
+                <td>••••••••</td>
+                <td><?php echo htmlspecialchars($result['name'], ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?php echo htmlspecialchars($result['created_at'], ENT_QUOTES, 'UTF-8'); ?></td>
+                <td>
+                    <a href='delete.php?id=<?php echo urlencode($result['ID']); ?>' class='btn' onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
           
                     </div>
             </table>

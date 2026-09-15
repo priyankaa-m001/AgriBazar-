@@ -1,18 +1,11 @@
 <?php
-include "config.php";
+require_once "config.php"; // provides $pdo
 session_start();
 
 include "cart.class.php";
 $cart = new Cart();
 
-$data = [];
-$sql = "SELECT * FROM products";
-$res = $con->query($sql);
-if ($res->num_rows > 0) {
-    while ($row = $res->fetch_assoc()) {
-        $data[] = $row;
-    }
-}
+$data = $pdo->query("SELECT * FROM products")->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -222,13 +215,13 @@ if ($res->num_rows > 0) {
     <div class="container">
         <?php foreach ($data as $row): ?>
             <div class="equipment-card">
-                <img src="images/<?php echo $row['IMAGE']; ?>" alt="<?php echo $row['PRODUCT']; ?>">
-                <h3><?php echo $row['PRODUCT']; ?></h3>
-                <p><?php echo $row['DESCRIPTION']; ?></p> <!-- Assuming there's a DESCRIPTION field in the DB -->
-                <div class="price">₹<?php echo $row['PRICE']; ?></div>
+                <img src="images/<?php echo htmlspecialchars($row['IMAGE'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($row['PRODUCT'], ENT_QUOTES, 'UTF-8'); ?>">
+                <h3><?php echo htmlspecialchars($row['PRODUCT'], ENT_QUOTES, 'UTF-8'); ?></h3>
+                <p><?php echo htmlspecialchars($row['DESCRIPTION'], ENT_QUOTES, 'UTF-8'); ?></p> <!-- Assuming there's a DESCRIPTION field in the DB -->
+                <div class="price">₹<?php echo htmlspecialchars($row['PRICE'], ENT_QUOTES, 'UTF-8'); ?></div>
                 <div class="buttons">
                     <button class="wishlist-btn">Add to Wishlist</button>
-                    <a href="view_details.php?id=<?php echo $row['PID']; ?>"><button>Buy Now</button></a>
+                    <a href="view_details.php?id=<?php echo urlencode($row['PID']); ?>"><button>Buy Now</button></a>
                 </div>
             </div>
         <?php endforeach; ?>
