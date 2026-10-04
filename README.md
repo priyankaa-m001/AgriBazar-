@@ -54,7 +54,6 @@ AgriBazaar/
    
 
 ## Future Improvements
-
 - Add payment gateway integration
 - Improve mobile responsiveness
 - Add product search and filtering
