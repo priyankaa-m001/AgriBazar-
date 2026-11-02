@@ -67,3 +67,18 @@ AgriBazaar/
 [AgriBazaar Screenshot](https://github.com/priyankaa-m001/AgriBazar-/issues/1#issue-5211392794)
 
 
+
+## Deploy
+
+See [DEPLOY.md](DEPLOY.md). This is a PHP + MySQL app, so it needs a PHP +
+MySQL host (for example InfinityFree, free) or a Docker host with a hosted
+MySQL database. It will not run on GitHub Pages or Vercel as-is.
+
+Home page: `try.html` · Equipment listing: `index.php` ·
+Login/register: `indexx.php` · Account page: `home.php`
+
+## Cleanup notes
+
+- `index1.php` was removed: it was an exact duplicate of `index.php`.
+- Product listing images are in `images/`; home-page images used by
+  `try.html` / `agribazar.html` remain in the repo root for now.
