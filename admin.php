@@ -1,4 +1,9 @@
 <?php
+// This is the admin login page. I used $pdoAuth here because admin accounts
+// are in the accounts database ("farmer"), not in the shop database.
+// I used $login_failed here to show a simple "login failed" message if the
+// admin name or password is wrong. If login is correct, I save the admin name
+// in $_SESSION['AdminLoginId'] so the admin pages know I am logged in.
 require_once "config/auth_db.php"; // provides $pdoAuth (admin_login lives in the accounts DB)
 session_start();
 

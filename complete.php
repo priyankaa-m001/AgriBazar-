@@ -1,4 +1,6 @@
-<?php 
+<?php
+	// This is the "order placed" page after checkout. I used $_GET["order_no"] here
+	// because checkout.php sends the order number in the link, so I can show it here.
 	require_once "config.php";
 	session_start();
 	

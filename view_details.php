@@ -1,4 +1,8 @@
-<?php 
+<?php
+	// This is the single product page. I used $item here to send one product
+	// (id, name, price, qty, total, photo) to the cart in one array.
+	// I used $id here to get the product id from the link, like view_details.php?id=3.
+	// I changed it to (int) so a user cannot put text or SQL in the link.
 	require_once "config.php"; // provides $pdo
 	session_start();
 	
@@ -22,6 +26,8 @@
 	$data=[];
 	$id = isset($_GET["id"]) ? (int)$_GET["id"] : 0;
 	if ($id > 0) {
+		// I used a prepared statement here because $id comes from the link,
+		// and I do not want a user to change the link and break my query.
 		$stmt = $pdo->prepare("SELECT * FROM products WHERE PID = :id");
 		$stmt->execute(['id' => $id]);
 		$row = $stmt->fetch();

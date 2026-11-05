@@ -1,4 +1,9 @@
 <?php
+// This file handles both signup and login. The forms are in register.php and indexx.php,
+// but they both send their data here, so I kept the checking and saving in one place.
+// I used $pdoAuth here because login and signup use the accounts database ("farmer"),
+// not the shop database. I used $errors as an array so I can send all the mistakes
+// back to the form page together.
 require_once 'config/auth_db.php'; // provides $pdoAuth (was dbConnect.php, accounts DB)
 
 session_start();
@@ -16,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
     $name=$_POST['name'];
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirm_password'];
+    // I used $created_at here because I want to know when a user made their account.
     $created_at = date('Y-m-d H:i:s');
 
 
@@ -46,6 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
         exit();
     }
 
+    // I used $hashedPassword here because I never save the real password in the database.
+    // password_hash makes a safe hash, and later I check it with password_verify.
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
     $stmt = $pdoAuth->prepare("INSERT INTO users (email, password,name,created_at) VALUES (:email, :password, :name, :created_at)");
     $stmt->execute(['email' => $email, 'password' => $hashedPassword, 'name'=>$name,'created_at'=>$created_at]);
@@ -84,6 +92,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signin'])) {
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['password'])) {
+        // I used session_regenerate_id here so the session id changes after login.
+        // I used $_SESSION['user'] here because home.php needs to know who is logged in.
         session_regenerate_id(true);
         $_SESSION['user'] = [
             'id' => $user['ID'],

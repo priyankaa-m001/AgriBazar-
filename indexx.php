@@ -1,5 +1,7 @@
 <?php
-
+// This is the login page. I used $errors here to show login mistakes, like wrong email or password.
+// I used $_SESSION['csrf_token'] here to make a safe token for the form, so another website
+// cannot submit this login form for my user. The real checking happens in user-account.php.
 session_start();
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));

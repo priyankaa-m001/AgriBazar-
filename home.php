@@ -1,4 +1,9 @@
 <?php
+// This is the My Account page after login.
+// I used $_SESSION['user'] here to check if someone is logged in.
+// If there is no user in the session, I send them back to index.php, because
+// this page is only for logged-in users. I used $user here to store that
+// logged-in user's name and email, so I can show them on this page.
 session_start();
 if(isset($_SESSION['user'])){
     $user = $_SESSION['user'];

@@ -1,13 +1,9 @@
 <?php
-/**
- * Single, canonical database connection for AgriBazaar.
- *
- * Every page should `require_once __DIR__ . '/config/db.php';` (adjust the
- * relative path as needed) instead of connecting directly. This file loads
- * credentials from environment variables (populated from a local .env file
- * that is NOT committed to git — see .env.example) and exposes one PDO
- * instance, $pdo, using prepared statements throughout the app.
- */
+// I made this file so I have only one database connection for the whole project.
+// I used $pdo here because every page needs the same connection, and PDO lets me
+// use prepared statements, so user input cannot break my SQL query.
+// I kept the password and database name in a .env file, not in this code,
+// because I do not want my real database details to go on GitHub.
 
 if (!function_exists('agribazaar_load_env')) {
     function agribazaar_load_env(string $path): void
@@ -42,9 +38,11 @@ if (!function_exists('agribazaar_load_env')) {
     }
 }
 
-// Load .env from the project root (one level up from /config).
+// I load the .env file from the project root (one folder up from /config).
 agribazaar_load_env(__DIR__ . '/../.env');
 
+// I used these variables so I can change the database name or password in one place.
+// $dbHost is localhost on XAMPP, $dbName is db_shopping_cart for products and orders.
 $dbHost = getenv('DB_HOST') ?: 'localhost';
 $dbName = getenv('DB_NAME') ?: 'db_shopping_cart';
 $dbUser = getenv('DB_USER') ?: 'root';
@@ -52,6 +50,7 @@ $dbPass = getenv('DB_PASS') ?: '';
 $dbCharset = getenv('DB_CHARSET') ?: 'utf8mb4';
 
 try {
+    // I used PDO here because it works the same for MySQL and it supports prepared statements.
     $pdo = new PDO(
         "mysql:host={$dbHost};dbname={$dbName};charset={$dbCharset}",
         $dbUser,
@@ -63,7 +62,8 @@ try {
         ]
     );
 } catch (PDOException $e) {
-    // Never leak connection details (host/user/db name) to the browser.
+    // I do not show the real error to the user, because it can show my database details.
+    // I only save it in the error log and show a simple message.
     error_log('AgriBazaar DB connection failed: ' . $e->getMessage());
     http_response_code(500);
     die('Database connection failed. Please try again later.');

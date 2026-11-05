@@ -1,4 +1,8 @@
-<?php 
+<?php
+  // This file updates the cart qty without reloading the page (AJAX).
+  // I used $id here to know which product to change, and $qty for the new quantity.
+  // I used $row_total here for that one product's new total, and $result to send
+  // both totals back to the page as JSON, so JavaScript can update the price on the screen.
   session_start();
   
   if (isset($_POST["id"]) && isset($_POST["qty"])) {

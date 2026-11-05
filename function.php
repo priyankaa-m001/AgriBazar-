@@ -1,5 +1,11 @@
 <?php
+// I am not using this file in the project right now. I made check_login() and
+// random_num() when I was learning, but my login now works through
+// user-account.php and $_SESSION['user'], so I kept this file only for reference.
+// I did not delete it, because I may use random_num() later for order numbers.
 
+// Note: check_login() below still uses mysqli and points to login.php,
+// which does not exist in this project, so please do not use it as it is.
 function check_login($con)
 {
      if(isset($_SESSION['user_id']))

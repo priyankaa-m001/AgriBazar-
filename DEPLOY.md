@@ -45,9 +45,8 @@ Use a PHP + MySQL host. The simplest free route is InfinityFree.
   the confusing names. Do not rename them without updating the links.
 - `index1.php` was an exact duplicate of `index.php` and was removed.
 - Product images for the database listings live in `images/` (1.jpg-20.jpg).
-  The home-page images used by `try.html` / `agribazar.html` are still in
-  the repo root - moving them would need every `src` in those two pages
-  updated, so they were left in place for this cleanup.
+  The home-page images used by `try.html` are still in the repo root -
+  moving them would need every `src` in that page updated, so they were left in place for this cleanup.
 - The repo is large (about 144 MB, mostly images). Uploads will take a
   while on a slow connection; compressing `home page.jpg` (24 MB) and
   `high quality seeds.jpg` (8.3 MB) would help a lot.

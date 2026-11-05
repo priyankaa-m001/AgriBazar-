@@ -1,5 +1,8 @@
 <?php
-
+// This is the signup page. I used $errors here to show signup mistakes, like
+// "passwords do not match" or "email is already registered".
+// I used $_SESSION['csrf_token'] here to make a safe token for the form.
+// The real checking and saving happens in user-account.php.
 session_start();
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));

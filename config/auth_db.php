@@ -1,16 +1,14 @@
 <?php
-/**
- * Second database connection — for the "accounts" database (admin_login,
- * registered user accounts). This is historically a SEPARATE database
- * from the storefront one (products/orders/checkout), which is why this
- * file is separate from config/db.php rather than merged into it.
- *
- * Exposes $pdoAuth. Include config/db.php first if a page also needs the
- * storefront database ($pdo).
- */
+// I made this file for the second database, for user accounts.
+// I used $pdoAuth here because login and signup use the "farmer" database,
+// and the shop (products and orders) uses the other database, db_shopping_cart.
+// I kept them separate because that is how I first made the project in college,
+// and I did not want to break the login part by merging them now.
+// If a page needs both, I include config/db.php first, then this file.
 
 require_once __DIR__ . '/db.php'; // reuses agribazaar_load_env(), loads .env
 
+// $dbAuthName is "farmer" because that database only stores user accounts.
 $dbHost = getenv('DB_HOST') ?: 'localhost';
 $dbAuthName = getenv('DB_AUTH_NAME') ?: 'farmer';
 $dbUser = getenv('DB_USER') ?: 'root';
@@ -18,6 +16,7 @@ $dbPass = getenv('DB_PASS') ?: '';
 $dbCharset = getenv('DB_CHARSET') ?: 'utf8mb4';
 
 try {
+    // I used $pdoAuth, not $pdo, so I do not mix up the accounts database with the shop database.
     $pdoAuth = new PDO(
         "mysql:host={$dbHost};dbname={$dbAuthName};charset={$dbCharset}",
         $dbUser,

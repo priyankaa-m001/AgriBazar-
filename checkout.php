@@ -1,4 +1,7 @@
-<?php 
+<?php
+	// This is the checkout page. I used $cart here to check if the cart is empty or not.
+	// If the cart is empty, I send the user back to view_cart.php, because there is nothing to buy.
+	// I used $errors as an array, so I can show all the form mistakes together at the top.
 	require_once "config.php"; // provides $pdo
 	session_start();
 	
@@ -51,9 +54,13 @@
 
 		if (empty($errors)) {
 			try {
+				// I used beginTransaction here because I want the user, order and order items
+				// to save together. If one of them fails, I roll back, so I do not get a half order.
 				$pdo->beginTransaction();
 
 				#Look up user by email first so returning customers don't get duplicated
+				// I used $existing here to check if this email is already in the users table.
+				// If yes, I use that old $uid. If no, I make a new user and use the new $uid.
 				$stmt = $pdo->prepare("SELECT ID FROM users WHERE EMAIL = :email LIMIT 1");
 				$stmt->execute(['email' => $email]);
 				$existing = $stmt->fetch();
@@ -87,6 +94,9 @@
 				}
 
 				#insert Order information — unguessable order number instead of rand()
+				// I used $order_no here so every order has its own number for the invoice page.
+				// I used $total_amt here because it is the full cart total I have to save with the order.
+				// I used $oid here because order_details needs the order id to link items to this order.
 				$order_no = strtoupper(bin2hex(random_bytes(6)));
 				$total_amt = $cart->get_cart_total();
 				$stmt = $pdo->prepare(

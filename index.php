@@ -1,4 +1,8 @@
 <?php
+// This is the farming equipment listing page.
+// I used $pdo here because I need to get all the products from the database.
+// I used $cart here because a user can add a product to the cart from this page.
+// I used $data to store all the products, so I can show them one by one below with a loop.
 require_once "config.php"; // provides $pdo
 session_start();
 
@@ -214,6 +218,8 @@ $data = $pdo->query("SELECT * FROM products")->fetchAll();
 
     <div class="container">
         <?php foreach ($data as $row): ?>
+            <!-- I used $row here because each $row is one product from the database,
+                 so I can show its photo, name, description and price in a card. -->
             <div class="equipment-card">
                 <img src="images/<?php echo htmlspecialchars($row['IMAGE'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($row['PRODUCT'], ENT_QUOTES, 'UTF-8'); ?>">
                 <h3><?php echo htmlspecialchars($row['PRODUCT'], ENT_QUOTES, 'UTF-8'); ?></h3>

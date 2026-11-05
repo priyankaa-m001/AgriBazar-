@@ -1,4 +1,6 @@
-<?php 
+<?php
+	// This is the cart page. I used $cart here to get all the items the user added.
+	// I used $items here to store those items, so I can show them in a table below.
 	require_once "config.php";
 	session_start();
 	

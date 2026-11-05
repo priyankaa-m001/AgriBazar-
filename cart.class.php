@@ -1,4 +1,7 @@
-<?php 
+<?php
+// I made this Cart class so I do not have to write cart code again on every page.
+// I used $cart_items to store all the items in the cart.
+// I kept the cart in $_SESSION, so the cart does not get empty when the user goes to another page.
 if(!session_id()){
 	session_start();
 }
@@ -11,10 +14,13 @@ if(!session_id()){
  
 	class Cart{
 		
+		// I used $cart_items as an array, because one cart can have many products.
 		protected $cart_items=array();
 		
 		public function __construct(){
 			
+			// I used $_SESSION["cart"] here because I want the cart to stay saved
+			// even if the user refreshes the page or goes to checkout.
 			if(!isset($_SESSION["cart"])){
 				$_SESSION["cart"]=[];
 			}
@@ -34,6 +40,9 @@ if(!session_id()){
 		
 		#add item to cart
 		public function add_to_cart($item=[]){
+			// I used $item here because one item has id, name, price, qty and total together.
+			// I first check if the product is already in the cart, so I only increase its qty
+			// instead of adding the same product again as a new row.
 			if(isset($item["id"],$item["name"],$item["price"],$item["qty"],$item["total"])){
 				
 				#Check Product already exists
@@ -73,6 +82,7 @@ if(!session_id()){
 		#get cart total
 		public function get_cart_total(){
 			#update cart total
+			// I used $sum here because I need to add the total of every item in the cart.
 			$sum=0;
 			foreach($this->cart_items as $item){
 				$sum+=$item["total"];
@@ -87,6 +97,8 @@ if(!session_id()){
 		
 		#update values to session
 		public function commit(){
+			// I used commit() here because after every change I have to save
+			// $cart_items back into $_SESSION, or the change will be lost.
 			$_SESSION["cart"]=$this->cart_items;
 		}
 		
